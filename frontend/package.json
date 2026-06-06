@@ -1,0 +1,31 @@
+{
+  "name": "code-understanding-rag-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.0",
+    "react-scripts": "5.0.1",
+    "axios": "^1.6.5",
+    "redux": "^5.0.1",
+    "react-redux": "^9.1.0",
+    "redux-thunk": "^3.1.0",
+    "d3": "^7.8.5",
+    "react-markdown": "^9.0.1",
+    "tailwindcss": "^3.4.1",
+    "web-vitals": "^3.5.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/"
+  },
+  "proxy": "http://localhost:8000",
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  }
+}
