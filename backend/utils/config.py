@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 
 class Settings(BaseSettings):
@@ -23,11 +24,13 @@ class Settings(BaseSettings):
     CHUNK_OVERLAP: int = 200
     TOP_K_RESULTS: int = 5
     SIMILARITY_THRESHOLD: float = 0.7
+    ENABLE_AUTH: bool = False
+    RATE_LIMIT_MAX: int = 100
+    RATE_LIMIT_WINDOW: int = 60
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
-    class Config:
-        env_file = ".env"
+    model_config = {"env_file": ".env"}
 
 
 settings = Settings()

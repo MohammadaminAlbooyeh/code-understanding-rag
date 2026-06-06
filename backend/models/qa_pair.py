@@ -1,7 +1,11 @@
 from sqlalchemy import Column, String, Text, DateTime
-from datetime import datetime
+from datetime import datetime, timezone
 
 from backend.models.database import Base
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
 
 
 class QAPair(Base):
@@ -12,4 +16,4 @@ class QAPair(Base):
     question = Column(Text, nullable=False)
     answer = Column(Text, nullable=False)
     sources = Column(Text, default="")
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=_utcnow)

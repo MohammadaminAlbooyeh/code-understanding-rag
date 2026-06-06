@@ -1,7 +1,11 @@
 from sqlalchemy import Column, String, Text, DateTime, Integer
-from datetime import datetime
+from datetime import datetime, timezone
 
 from backend.models.database import Base
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
 
 
 class Embedding(Base):
@@ -12,4 +16,4 @@ class Embedding(Base):
     chunk_index = Column(Integer, default=0)
     chunk_text = Column(Text, nullable=False)
     vector_id = Column(String, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=_utcnow)

@@ -1,7 +1,11 @@
 from sqlalchemy import Column, String, Text, DateTime
-from datetime import datetime
+from datetime import datetime, timezone
 
 from backend.models.database import Base
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
 
 
 class Documentation(Base):
@@ -11,4 +15,4 @@ class Documentation(Base):
     code_id = Column(String, nullable=False)
     doc_type = Column(String, nullable=False)
     content = Column(Text, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=_utcnow)

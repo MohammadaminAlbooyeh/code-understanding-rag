@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def generate_id() -> str:
@@ -7,7 +7,7 @@ def generate_id() -> str:
 
 
 def timestamp() -> str:
-    return datetime.utcnow().isoformat()
+    return datetime.now(timezone.utc).isoformat()
 
 
 def truncate_text(text: str, max_length: int = 100) -> str:
